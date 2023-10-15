@@ -1,0 +1,19 @@
+<div class="nav--container">
+  <div class="mobile--container">
+    <button>
+      <img src="../../../assets/pics/sun-logo.png" alt="" srcset="">
+    </button>
+
+    <button *ngIf="!clicked" (click)="clicked = true" class="profile--container" >
+      <p *ngIf="!localKey">Click to put your API Key</p>
+      <label><i class="fas fa-key"></i></label>
+      <p *ngIf="localKey">{{localKey | slice:0:18}}...</p>
+      <!--<i class="far fa-user-circle"></i>-->
+    </button>
+
+    <div class="key--container" *ngIf="clicked">
+      <input (keyup.enter)="addNewKey(newItem.value)"  #newItem type="text" [(ngModel)]="localKey">
+      <button (click)="addNewKey(newItem.value)" *ngIf="clicked"><i class="fas fa-power-off"></i></button>
+    </div>
+  </div>
+</div>

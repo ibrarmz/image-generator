@@ -1,0 +1,52 @@
+.error--container {
+  width: 100%;
+  height: 100vh;
+  background: rgba($color: #000000, $alpha: 0.2);
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+
+  .error-msg---container {
+    width: 90%;
+    min-height: 30vh;
+    background: #101010;
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+
+    p {
+      text-align: center;
+      font-size: 1.2em;
+      color: #fff;
+    }
+
+    i {
+      font-size: 2em;
+      color: #ff3333;
+    }
+
+    button {
+      width: 30%;
+      padding: 5px 10px;
+      font-size: 1.3em;
+      background: #ff3333;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .error-msg---container {
+    width: 30% !important;
+  }
+}

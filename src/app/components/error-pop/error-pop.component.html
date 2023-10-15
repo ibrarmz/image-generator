@@ -1,0 +1,7 @@
+<div *ngIf="error" class="error--container">
+  <div class="error-msg---container">
+    <i class="fas fa-exclamation-triangle"></i>
+    <p>{{error}}</p>
+    <button (click)="clearError()">Ok</button>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<app-error-pop [error]="error"></app-error-pop>
+
+<div class="component--container">
+  <div class="input--container">
+    <input (keyup.enter)="generateAnImage()" [(ngModel)]="prompt">
+    <button (click)="generateAnImage()">
+      <i class="fas fa-cog" [ngClass]="loaded == true ? 'loading-button' : '' "></i>
+    </button>
+  </div>
+
+  <div *ngIf="!image" class="present--container">
+    <h2>The best AI Image Generator</h2>
+    <p>To use the image generator, you need to put your <a href="https://stablediffusionapi.com/dashboard/apikeys" target="_blank">stable diffussion API key</a></p>
+    <i class="fas fa-robot"></i>
+  </div>
+
+  <div *ngIf="image" class="image--container">
+    <img [src]="image">
+  </div>
+</div>
